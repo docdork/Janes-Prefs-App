@@ -1,13 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Record from "./components/Record";
 import RecordList from "./components/RecordList";
 import OpList from "./components/OpList";
+import OpRecord from "./components/OpRecord";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -28,6 +26,16 @@ const router = createBrowserRouter([
       {
         path: "/oplist",
         element: <OpList />,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/oprecord",
+        element: <OpRecord />,
       },
     ],
   },
