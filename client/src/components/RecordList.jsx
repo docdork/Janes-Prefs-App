@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 const Record = (props) => (
   <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
     <td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
-      {props.record.name}
+      <Link to={`/oplist`}>{props.record.name}</Link>
     </td>
+
     <td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
-      {props.record.position}
+      {props.record.speciality}
     </td>
-    <td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
+    {/* <td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
       {props.record.level}
-    </td>
+    </td> */}
     <td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
       <div className="flex gap-2">
         <Link
@@ -78,8 +79,8 @@ export default function RecordList() {
 
   // This following section will display the table with the records of individuals.
   return (
-    <>
-      <h3 className="text-lg font-semibold p-4">Employee Records</h3>
+    <div className=" rounded-lg h-svh">
+      <h3 className="text-lg font-semibold p-4">Surgeons</h3>
       <div className="border rounded-lg overflow-hidden">
         <div className="relative w-full overflow-auto">
           <table className="w-full caption-bottom text-sm">
@@ -89,11 +90,11 @@ export default function RecordList() {
                   Name
                 </th>
                 <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
-                  Position
+                  Speciality
                 </th>
-                <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                {/* <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
                   Level
-                </th>
+                </th> */}
                 <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
                   Action
                 </th>
@@ -105,6 +106,6 @@ export default function RecordList() {
           </table>
         </div>
       </div>
-    </>
+    </div>
   );
 }
