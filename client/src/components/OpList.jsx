@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Record = (props) => (
+const Record = (props) => {
   <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
     <td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
       {/* <Link to={`/oplist`}> */}
-      {props.record.operations[1].name}
+      {props.record.operations[0].name}
       {/* </Link> */}
     </td>
-
     <td className="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
       <div className="flex gap-2">
         <Link
@@ -29,10 +28,10 @@ const Record = (props) => (
         </button>
       </div>
     </td>
-  </tr>
-);
+  </tr>;
+};
 
-export default function RecordList() {
+export default function OpList() {
   const [records, setRecords] = useState([]);
 
   // This method fetches the records from the database.
